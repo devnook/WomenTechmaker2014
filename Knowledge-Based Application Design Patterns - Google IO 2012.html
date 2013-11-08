@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://io12-knowledge.appspot.com/#4 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Knowledge-Based Application Design Patterns - Google IO 2012</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="http://io12-knowledge.appspot.com/theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="http://io12-knowledge.appspot.com/theme/css/phone.css">
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="slides" src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/slides.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="order" src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/order.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="../slide_config" src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/slide_config.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="modernizr.custom.45394" src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/modernizr.custom.45394.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="prettify/prettify" src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/prettify.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="hammer" src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/hammer.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="slide-controller" src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/slide-controller.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="slide-deck" src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/slide-deck.js"></script><!--<base target="_blank">--><base href="." target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/require-1.0.8.min.js"></script>
+
+  <style>
+    .inline-image {
+	  float: left;
+	  margin: 0 60px 0 0;
+    }
+	slide.nopadding {
+		width: 1100px;
+		padding: 40px 0;
+	}
+    .overlay-title {
+	  	background: rgba(0, 0, 0, 0.5);
+		color: white;
+		padding: 20px;
+		margin: 250px 0;
+		text-align: center;
+	}
+	footer.source {
+		background: rgba(0, 0, 0, 0.8);
+		padding: 10px 20px;
+		border-radius: 5px;
+		left: auto;
+		right: 10px;
+		bottom: 10px;
+		text-align: right;
+	}
+  </style>
+<link rel="icon" type="image/png" href="http://io12-knowledge.appspot.com/images/google_developers_logo_tiny.png"><link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open%20Sans:regular,semibold,italic,italicsemibold|Inconsolata&v2"><link type="text/css" rel="stylesheet" href="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/style.css"><script type="text/javascript" charset="utf-8" src="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/page_context.js"></script></head>
+<body style="opacity: 0" class="loaded popup" screen_capture_injected="true">
+
+<slides class="layout-widescreen">
+
+  <slide class="logoslide nobackground" data-slide-num="1" data-total-slides="56">
+    <article class="flexbox vcenter">
+      <span><img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/google_developers_logo.png"></span>
+    </article>
+  </slide>
+
+  <slide class="title-slide segue nobackground far-past" data-slide-num="2" data-total-slides="56">
+    <aside class="gdbar"><img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/google_developers_icon_128.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title="">Knowledge-Based<br>Application Design Patterns</h1>
+      <h2 data-config-subtitle=""><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter="">Shawn Simister<br>Developer Programs Engineer, Google</p>
+    </hgroup>
+  </slide>
+
+  <slide class="past" data-slide-num="3" data-total-slides="56">
+    <!--<hgroup>
+      <h2>About me</h2>
+    </hgroup>-->
+    <article style="padding:100px 0 0 0">
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/profile_circle.png" class="inline-image" style="width:240px; margin: 20px 40px 0 40px">
+      <h3 class="blue" style="font-size:1.3em">Shawn Simister</h3>
+	  <p>Developer Relations, Knowledge (Search)</p>
+	  <br><br>
+	  <ul style="margin:0 0 0 380px">
+	    <li>Freebase</li>
+		<li>Google Refine</li>
+		<li>Schema.org</li>
+		<li>Knowledge Graph</li>
+	  </ul>
+    </article>
+    <aside class="note">
+      <section>
+        <ul>
+			<li>Building web apps - 10 years</li>
+			<li>Developer Relations at Google - 1 year</li>
+			<li>Member of the Freebase community since it began 5 years ago.</li>
+			<li>This is what I've learned from building applications on top of a KG and helping other developers do the same.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground nopadding current" style="background-image: url(images/screenshots/the_internet.png)" data-slide-num="4" data-total-slides="56">
+    <hgroup>
+      <h2 class="overlay-title">Knowledge-based Applications</h2>
+    </hgroup>
+    <aside class="note">
+      <section>
+        <ul>
+          <li>The web is changing from a web of documents to a web of things.</li>
+		  <li>Users expect applications to know about the real-world things that they care about.</li>
+		  <li>This creates opportunities to build new types of applications and enhance existing applications.</li>
+		  <li>Today I'm going to show you examples of applications built using a Knowledge Graph.</li>
+		  <li>I'll show common design patterns that help you tap into the power of the Knowledge Graph.</li>
+		  <li>And we'll look at some sample code to help you get started.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground next" style="background-image: url(images/screenshots/knowledge_graph.png)" data-slide-num="5" data-total-slides="56">
+	<article>
+		<footer class="source">source: <a target="_blank" href="https://www.google.com/search?q=chuck+norris">Google Search</a></footer>
+	</article>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>Example: Google's Knowledge Graph</li>
+          <li>500 million entities</li>
+          <li>3.5 billion facts</li>
+		  <li>You saw on Wednesday how you can query the KG from your Android phone.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground far-next" style="background-image: url(images/screenshots/chuck_norris_graph.png)" data-slide-num="6" data-total-slides="56">
+	<aside class="note">
+      <section>
+        <ul>
+			<li>What is a Knowledge Graph</li>
+			<li>A collection of real-world entities.</li>
+			<li>Interesting facts about those entities.</li>
+			<li>Meaningful relationships between the entities.</li>
+			<li>High quality.</li>
+			<li>De-duplicated.</li>
+			<li>Searchable.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="7" data-total-slides="56" class="">
+    <hgroup>
+      <h2>The Freebase Knowledge Graph</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/freebase-logo.jpg" class="inline-image" style="width:200px">
+	  <h3 class="blue">www.freebase.com</h3><br>
+      <ul style="margin:0 0 0 300px">
+        <li>Open, crowd-sourced, knowledge graph.</li>
+		<li>23M+ topics, 2k+ commons types.</li><li>
+		</li><li>RESTful APIs.</li>
+		<li>Creative Commons Attribution License.</li>
+		<li>Data dumps.</li>
+		<li>A source for Google’s Knowledge Graph.</li>
+      </ul>
+    </article>
+    <aside class="note">
+      <section>
+        <ul>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/screenshots/freebase_topic.png)" data-slide-num="8" data-total-slides="56">
+	<article>
+		<footer class="source">source: <a target="_blank" href="http://dev.freebase.com/m/0d6lp">Freebase</a></footer>
+	</article>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>This is Freebase.com</li>
+          <li>Anyone with a Google account can contribute. Like Wikipedia.</li>
+          <li>Every type, property and topic has its own page which let you view and edit them.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/screenshots/summary.png)" data-slide-num="9" data-total-slides="56">
+	<aside class="note">
+      <section>
+        <ul>
+			<li>Imagine what new types of applications we can build on top of a KG.</li>
+			<li>Applications that understand real-world entities.</li>
+			<li>Applications that allow users to interact with entities in intuitive ways.</li>
+	        <li>Applications that scale to millions of things.</li>
+			<li>Next we're going to look at some ways that you can build these sorts of applications right now.</li>
+			<li><b>Discovery Patterns</b>: a way to convert things to strings.</li>
+	        <li><b>Interaction Patterns</b>: navigating the knowledge graph</li>
+	        <li><b>Presentation Patterns</b>: displaying info about entities; in context</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="segue dark nobackground" data-slide-num="10" data-total-slides="56">
+    <aside class="gdbar"><img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Discovery Patterns</h2>
+      <h3>Turning strings into things</h3>
+    </hgroup>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>Usually the first step in an application</li>
+          <li>Not just limited to strings.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="11" data-total-slides="56" class="">
+    <hgroup>
+      <h2>Reconciliation Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/freebase_suggest-1.png" class="inline-image" style="width:300px">
+	  <div>
+		<h3 class="blue">Problem</h3>
+		<p>The user wants to specify an exact entity rather than just keywords.</p>
+		<p>Keywords can be ambiguous so we need to be able to present them with options.</p>
+		<p>Not just limited to keywords. Images, articles, geo-coordinates, etc. can all be reconciled to entities.
+	  </p></div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="12" data-total-slides="56" class="">
+    <hgroup>
+      <h2>Reconciliation Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/freebase_suggest-1.png" class="inline-image" style="width:300px">
+	  <div>
+		<h3 class="blue">Solution</h3>
+		<p>Present the user with a list of disambiguated entities.</p>
+		<p>Use reconciliation algorithms to automatically match entities.</p>
+		<p>Combine both techniques to get the best results.</p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/screenshots/ranker.png)" data-slide-num="13" data-total-slides="56">
+	<article>
+		<footer class="source">source: <a target="_blank" href="http://www.ranker.com/">Ranker</a></footer>
+	</article>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>Ranker.com is a site that lets you create and share ranked lists of things.</li>
+          <li>Here we see their list editor which prompts you to enter a new entity.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/screenshots/ranker-2.png)" data-slide-num="14" data-total-slides="56">
+	<article>
+		<footer class="source">source: <a target="_blank" href="http://www.ranker.com/">Ranker</a></footer>
+	</article>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>The autocomplete box looks up possible matching entities in their database.</li>
+          <li>Lets the user create a new entity if needed.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="15" data-total-slides="56" class="">
+    <hgroup>
+      <h2>Freebase Suggest</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <!--<img src="images/screenshots/freebase_suggest.png" alt="Description" title="Description">-->
+      <iframe data-src="demos/freebase_suggest.html" style="width:900px;border:0px;" src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/freebase_suggest.html"></iframe>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>Free, open source jQuery plugin</li>
+          <li>Easy to add to any web app.</li>
+          <li>Takes keyword input and returns entity name and ID.</li>
+		  <li>Also a Search API</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="16" data-total-slides="56" class="">
+    <hgroup>
+      <h2>Reconciliation Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/freebase_suggest-1.png" class="inline-image" style="width:300px">
+	  <div>
+		<h3 class="blue">When to use it?</h3>
+		<p>When we need entity IDs for known entity names.</p>
+		<p>When we need disambiguated topics.</p>
+		<p>When tags won’t suffice.</p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/screenshots/amen.png)" data-slide-num="17" data-total-slides="56">
+	<article>
+		<footer class="source">source: <a target="_blank" href="https://getamen.com/">Amen</a></footer>
+	</article>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>Amen is a social app that lets you state strong opinions about real world things.</li>
+          <li>Uses Freebase Suggest API to suggest entities.</li>
+          <li>Users can click on entities to see other opinions about that entity.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="18" data-total-slides="56" class="">
+    <hgroup>
+      <h2>Detection Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/nlp.png" class="inline-image" style="width:400px">
+	  <div>
+		<h3 class="blue">Problem</h3>
+		<p>User wants to learn more about the subject matter of an article, video, image or other piece of content.</p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="19" data-total-slides="56" class="">
+    <hgroup>
+      <h2>Detection Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/nlp.png" class="inline-image" style="width:400px">
+	  <div>
+		<h3 class="blue">Solution</h3>
+		<p>Use Named Entity Recognition.</p>
+		<p>Parse structured markup like Schema.org, RDFa and Microformats.</p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/screenshots/dbpedia_spotlight.png)" data-slide-num="20" data-total-slides="56">
+	<article>
+		<footer class="source">source: <a target="_blank" href="http://dbpedia-spotlight.github.com/demo/index.html">DBpedia Spotlight</a></footer>
+	</article>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>DBpedia Spotlight is an open source project.</li>
+		  <li>DBpedia is a project to extract structured data about entities from Wikipedia.</li>
+          <li>Named entity recognition using DBpedia data</li>
+          <li>DBpedia IDs can be easily mapped to other sources like Freebase.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="21" data-total-slides="56" class="">
+    <hgroup>
+      <h2>Extraction Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/nlp.png" class="inline-image" style="width:400px">
+	  <div>
+		<h3 class="blue">When to use it?</h3>
+		<p>Lots of existing content without entities identified.</p>
+		<p>Need to identify relevant entities.</p>
+		<p>Too much content to manually mark it up with entities.</p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/screenshots/open_calais.png)" data-slide-num="22" data-total-slides="56">
+	<article>
+		<footer class="source">source: <a target="_blank" href="http://www.opencalais.com/">OpenCalais</a></footer>
+	</article>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>Services like OpenCalais, AlchemyAPI and Zemanta also use Freebase data to look up named entities in text.</li>
+          <li>They all have APIs</li>
+          <li>They all return Freebase IDs.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="segue dark nobackground" data-slide-num="23" data-total-slides="56">
+    <aside class="gdbar"><img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Interaction Patterns</h2>
+      <h3>Traversing a web of entities</h3>
+    </hgroup>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>This is how users interact with your application.</li>
+          <li>Entities allow us to navigate your data according to real world things.</li>
+          <li>Also allows us to describe meaningful relationships between things.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="24" data-total-slides="56" class="">
+    <hgroup>
+      <h2>Faceting Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/refine_facets.png" class="inline-image" style="width:300px">
+	  <div>
+		<h3 class="blue">Problem</h3>
+		<p>User wants to find and filter interesting data.</p>
+		<p>Knowledge Graph is large and not all the data is going to interesting to the user.</p>
+		<p>No single way to organize data in order to surface interesting results.</p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="25" data-total-slides="56" class="">
+    <hgroup>
+      <h2>Faceting Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/refine_facets.png" class="inline-image" style="width:300px">
+	  <div>
+		<h3 class="blue">Solution</h3>
+		<p>Count up how frequently each facet (property or value) occurs and allow the user to filter the data.</p><p>
+		</p><p>Show different types of facets depending on what data is being shown.</p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/screenshots/google_recipe_search.png)" data-slide-num="26" data-total-slides="56">
+	<article>
+		<footer class="source">source: <a target="_blank" href="https://www.google.com/search?q=margarita+recipe">Google Search</a></footer>
+	</article>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>When a user searches for a recipe, Google provides faceted search.</li>
+          <li>The choices for each facet vary depending on the results.</li>
+          <li>Clicking a facet automatically does a new, constrained search.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="27" data-total-slides="56" class="">
+    <hgroup>
+      <h2>Find a Collection of Entities</h2>
+	  <h3>Freebase API</h3>
+    </hgroup>
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="json"><span class="pun">[{</span><span class="pln">
+  </span><span class="str">"id"</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">,</span><span class="pln">
+  </span><span class="str">"name"</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">,</span><span class="pln">
+  </span><span class="str">"profession"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"software developer"</span><span class="pun">,</span><span class="pln">
+  </span><span class="str">"type"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"/people/person"</span><span class="pun">,</span><span class="pln">
+</span><span class="pun">}]</span></pre>
+<pre class="prettyprint" data-lang="json"><span class="pun">[{</span><span class="pln">
+  </span><span class="str">"id"</span><span class="pun">:</span><span class="pln">         </span><span class="str">"/en/eric_s_raymond"</span><span class="pun">,</span><span class="pln">
+  </span><span class="str">"name"</span><span class="pun">:</span><span class="pln">       </span><span class="str">"Eric S. Raymond"</span><span class="pun">,</span><span class="pln">
+  </span><span class="str">"profession"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Software Developer"</span><span class="pun">,</span><span class="pln">
+  </span><span class="str">"type"</span><span class="pun">:</span><span class="pln">       </span><span class="str">"/people/person"</span><span class="pln">
+</span><span class="pun">},{</span><span class="pln">
+  </span><span class="str">"id"</span><span class="pun">:</span><span class="pln">         </span><span class="str">"/en/sergey_brin"</span><span class="pun">,</span><span class="pln">
+  </span><span class="str">"name"</span><span class="pun">:</span><span class="pln">       </span><span class="str">"Sergey Brin"</span><span class="pun">,</span><span class="pln">
+  </span><span class="str">"profession"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Software Developer"</span><span class="pun">,</span><span class="pln">
+  </span><span class="str">"type"</span><span class="pun">:</span><span class="pln">       </span><span class="str">"/people/person"</span><span class="pln">
+</span><span class="pun">…</span><span class="pln">
+</span><span class="pun">}]</span></pre>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>MQL is the query language for looking up complex relationships in Freebase</li>
+          <li>Simple JSON, query-by-example</li>
+          <li>Results format matches query format.</li>
+		  <li>Returns 102 results in Freebase</li>
+		  <li>This query could be used to build a faceting interface.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="28" data-total-slides="56" class="">
+    <hgroup>
+      <h2>Find a Collection of Entities</h2>
+      <h3>Freebase API</h3>
+    </hgroup>
+    <article>
+      <p>Simple REST API call using standard <a href="http://code.google.com/p/google-api-python-client/">Google API Client Library</a>.</p>
+      <pre class="prettyprint" data-lang="python"><span class="kwd">from</span><span class="pln"> apiclient </span><span class="kwd">import</span><span class="pln"> discovery
+</span><span class="kwd">from</span><span class="pln"> apiclient </span><span class="kwd">import</span><span class="pln"> model
+
+API_KEY </span><span class="pun">=</span><span class="pln"> </span><span class="str">'YOUR-API-KEY-GOES-HERE'</span><span class="pln">
+model</span><span class="pun">.</span><span class="typ">JsonModel</span><span class="pun">.</span><span class="pln">alt_param </span><span class="pun">=</span><span class="pln"> </span><span class="str">""</span><span class="pln">
+freebase </span><span class="pun">=</span><span class="pln"> discovery</span><span class="pun">.</span><span class="pln">build</span><span class="pun">(</span><span class="str">'freebase'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'v1'</span><span class="pun">,</span><span class="pln"> developerKey</span><span class="pun">=</span><span class="pln">API_KEY</span><span class="pun">)</span><span class="pln">
+</span><b><span class="pln">query </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[{</span><span class="str">'id'</span><span class="pun">:</span><span class="kwd">None</span><span class="pun">,</span><span class="str">'name'</span><span class="pun">:</span><span class="kwd">None</span><span class="pun">,</span><span class="str">'type'</span><span class="pun">:</span><span class="str">'/people/person'</span><span class="pun">,</span><span class="str">'profession'</span><span class="pun">:</span><span class="str">'software developer'</span><span class="pun">}]</span></b><span class="pln">
+results </span><span class="pun">=</span><span class="pln"> freebase</span><span class="pun">.</span><span class="pln">mqlread</span><span class="pun">(</span><span class="pln">query</span><span class="pun">=</span><span class="pln">query</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">for</span><span class="pln"> topic </span><span class="kwd">in</span><span class="pln"> results</span><span class="pun">:</span><span class="pln">
+  </span><span class="kwd">print</span><span class="pln"> topic</span><span class="pun">[</span><span class="str">'name'</span><span class="pun">]</span></pre>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>Use Google client library to run the same query from your app.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="29" data-total-slides="56" class="">
+    <hgroup>
+      <h2>Faceting Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/refine_facets.png" class="inline-image" style="width:300px">
+	  <div>
+		<h3 class="blue">When to use it?</h3>
+		<p>Too many different facts about entities.</p>
+		<p>Sparse or undifferentiated data.</p>
+		<p>Can’t simply provide a list of results.</p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/screenshots/google_refine.png)" data-slide-num="30" data-total-slides="56">
+	<article>
+		<footer class="source">source: <a target="_blank" href="http://code.google.com/p/google-refine/">Google Refine</a></footer>
+	</article>
+	<aside class="note">
+      <section>
+        <ul>
+		  <li>Google Refine is an open source tool for cleaning up messy data</li>
+		  <li>Uses faceting pattern to drill down into messy data and find patterns.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="31" data-total-slides="56">
+    <hgroup>
+      <h2>Recommendation Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/related_topics.png" class="inline-image" style="width:300px">
+	  <div>
+		<h3 class="blue">Problem</h3>
+		<p>We want to encourage deeper exploration of our content.</p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="32" data-total-slides="56">
+    <hgroup>
+      <h2>Recommendation Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/related_topics.png" class="inline-image" style="width:300px">
+	  <div>
+		<h3 class="blue">Solution</h3>
+		<p>Use semantic relationships between entities to make meaningful recommendations for related entities.</p>
+		<p>Not only can we say that they're related by we can also say why.</p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+			<li>Entities must be reconciled for this to work.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/screenshots/visual_refinements.png)" data-slide-num="33" data-total-slides="56">
+	<aside class="note">
+      <section>
+        <ul>
+          <li>The Knowledge Graph uses Recommendation</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="34" data-total-slides="56">
+    <hgroup>
+      <h2>Recommendation Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/related_topics.png" class="inline-image" style="width:300px">
+	  <div>
+		<h3 class="blue">When to use it?</h3>
+		<p>When there are too many possible ways to organize the content and each different users will have varied tastes.</p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/screenshots/ookaboo.png)" data-slide-num="35" data-total-slides="56">
+	<article>
+		<footer class="source">source: <a target="_blank" href="http://ookaboo.com/o/pictures/topic/12336408/F22_Raptor">Ookaboo</a></footer>
+	</article>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>Ookaboo is a repository of freely licensed images organized by entity.</li>
+          <li>Every entity has its own page with a description and pictures.</li>
+		  <li>The right-hand side has suggestions for other related entities.</li>
+          <li>Ookaboo uses Freebase data to figure out which entities might be related.</li>
+          <li>Makes it much easier to explore a large collection of images.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="segue dark nobackground" data-slide-num="36" data-total-slides="56">
+    <aside class="gdbar"><img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Presentation Patterns</h2>
+      <h3>Mashing up entities on the web</h3>
+    </hgroup>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>The final part of your application.</li>
+          <li>Not just a shiny distraction. Its all based on real data so it adds a lot of value.</li>
+          <li>The key is to mix the KG content with your existing content.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>  
+
+  <slide data-slide-num="37" data-total-slides="56">
+    <hgroup>
+      <h2>Summarization Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/knowledge_panel.png" class="inline-image" style="width:350px">
+	  <div>
+		<h3 class="blue">Problem</h3>
+		<p>We want to describe an entity.</p>
+		<p>User needs clues to know which entity we're talking about.</p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+		  <li>Users don't disambiguate entities with IDs</li>
+		  <li>how do they know which "John Smith" we're talking about?</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="38" data-total-slides="56">
+    <hgroup>
+      <h2>Summarization Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/knowledge_panel.png" class="inline-image" style="width:350px">
+	  <div>
+		<h3 class="blue">Solution</h3>
+		<p>Display a short summary including name, image, description and relevant property values. </p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="39" data-total-slides="56">
+    <hgroup>
+      <h2>Freebase Topic API</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+<iframe data-src="demos/freebase_topic.html" style="width:900px;height:500px;border:0px;"></iframe>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+          	<li>One HTTP request gets you everything</li>
+	        <li>Gives image, description and all properties</li>
+            <li>Values are formatted so that its easy to display them in HTML</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="40" data-total-slides="56">
+    <hgroup>
+      <h2>Summarization Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/knowledge_panel.png" class="inline-image" style="width:350px">
+	  <div>
+		<h3 class="blue">When to use it?</h3>
+		<p>When we have content that needs to be put in the context of one or more entities.</p>
+		<p>When we want to encourage people to navigate content by entities, we can reinforce that by showing which entities are relevant to each piece of content.</p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/screenshots/wsj.png)" data-slide-num="41" data-total-slides="56">
+	<article>
+		<footer class="source">source: <a target="_blank" href="http://online.wsj.com/article/SB10001424052702303901504577462850818454084.html">The Wall Street Journal</a></footer>
+	</article>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>WSJ uses Freebase topic summaries to augment movie reviews</li>
+		  <li>This article reviews several movies. Each one has a topic on the right.</li>
+		  <li>Reconcilation pattern makes this all possible.</li>
+		  <li>Also great example of Mashup Pattern. Wouldn't be possible without recon.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="42" data-total-slides="56">
+    <hgroup>
+      <h2>Mashup Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/key_sources.png" class="inline-image" style="width:300px">
+	  <div>
+		<h3 class="blue">Problem</h3>
+		<p>User wants to see different types of information about the same entity.
+			</p><ul style="margin: 0 0 0 400px">
+				<li>Different sites or data sources.</li>
+				<li>Different types of data about the same entity.</li>
+			</ul>
+		<p></p>
+		<p>Hard to combine data from different sources.</p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="43" data-total-slides="56">
+    <hgroup>
+      <h2>Mashup Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/key_sources.png" class="inline-image" style="width:300px">
+	  <div>
+		<h3 class="blue">Solution</h3>
+		<p>Create links between the same entity in different datasets/contexts.</p>
+		<p>Encourage users to jump between different contexts for the same entity.</p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+		  <li>You can think of these links as "foreign keys" in your database.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/screenshots/seevl.png)" data-slide-num="44" data-total-slides="56">
+	<article>
+		<footer class="source">source: <a target="_blank" href="http://seevl.net/">seevl</a></footer>
+	</article>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>Seevl is a music recommendation service.</li>
+          <li>It works as a Chrome extension that injects addition information into YouTube pages.</li>
+		  <li>When Seevl detects an artist that it knows about, it inserts a topic summary.</li>
+          <li>Also recommends similar artists that you might like.</li>
+          <li>Makes recommendations based on proximity in the knowledge graph and also weights some relationships more than others.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="45" data-total-slides="56">
+    <hgroup>
+      <h2>Get all the foreign keys</h2>
+      <h3>Freebase API</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="python"><span class="pln">		</span><span class="kwd">import</span><span class="pln"> json
+		</span><span class="kwd">import</span><span class="pln"> urllib
+
+		API_KEY </span><span class="pun">=</span><span class="pln"> </span><span class="str">'YOUR-API-KEY-GOES-HERE'</span><span class="pln">
+		service_url </span><span class="pun">=</span><span class="pln"> </span><span class="str">'https://www.googleapis.com/freebase/v1/topic'</span><span class="pln">
+		</span><span class="kwd">params</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+		  </span><b><span class="str">'filter'</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">'/type/object/key'</span><span class="pun">,</span><span class="str">'/common/topic/topic_equivalent_webpage'</span><span class="pun">],</span></b><span class="pln">
+		  </span><span class="str">'alldata'</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+		  </span><span class="str">'key'</span><span class="pun">:</span><span class="pln"> API_KEY
+		</span><span class="pun">}</span><span class="pln">
+		topic_id </span><span class="pun">=</span><span class="pln"> </span><span class="str">'/en/san_francisco'</span><span class="pln">
+		url </span><span class="pun">=</span><span class="pln"> service_url </span><span class="pun">+</span><span class="pln"> topic_id </span><span class="pun">+</span><span class="pln"> </span><span class="str">'?'</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> urllib</span><span class="pun">.</span><span class="pln">urlencode</span><span class="pun">(</span><span class="kwd">params</span><span class="pun">)</span><span class="pln">
+		response </span><span class="pun">=</span><span class="pln"> json</span><span class="pun">.</span><span class="pln">loads</span><span class="pun">(</span><span class="pln">urllib</span><span class="pun">.</span><span class="pln">urlopen</span><span class="pun">(</span><span class="pln">url</span><span class="pun">).</span><span class="pln">read</span><span class="pun">())</span><span class="pln">
+		</span><span class="kwd">for</span><span class="pln"> result </span><span class="kwd">in</span><span class="pln"> response</span><span class="pun">[</span><span class="str">'result'</span><span class="pun">][</span><span class="str">'property'</span><span class="pun">][</span><span class="str">'/common/topic/topic_equivalent_webpage'</span><span class="pun">][</span><span class="str">'values'</span><span class="pun">]</span><span class="pln">
+		  </span><span class="kwd">print</span><span class="pln"> result</span><span class="pun">[</span><span class="str">'uri'</span><span class="pun">]</span></pre>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>Topic API: New API that we're launching</li>
+          <li>Lets you get all the property values for an entity.</li>
+          <li>HIGHLIGHT: We've constrained it to just /type/object/key and /common/topic/topic_equivalent_webpage -&gt; foreign keys</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="46" data-total-slides="56">
+    <hgroup>
+      <h2>Mashup Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/key_sources.png" class="inline-image" style="width:300px">
+	  <div>
+		<h3 class="blue">When to use it?</h3>
+		<p>Need to see information from different perspectives.</p>
+		<p>Different information about different entities is not available from the same source or website.</p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/screenshots/sameas.png)" data-slide-num="47" data-total-slides="56">
+	<article>
+		<footer class="source">source: <a target="_blank" href="http://sameas.org/html?uri=http%3A%2F%2Frdf.freebase.com%2Fns%2Fm.0d6lp">SameAs.org</a></footer>
+	</article>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>Sameas.org is a data dub that links together different datasets on the web.</li>
+          <li>It has a simple JSON API that you can use.</li>
+		  <li>Every entity has a cluster of IDs which are all said to be the "same as" each other.</li>
+          <li>This lets you easily combine data from datasets.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="48" data-total-slides="56">
+    <hgroup>
+      <h2>Visualization Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/thinkbase_graph.png" class="inline-image" style="width:400px">
+	  <div>
+		<h3 class="blue">Problem</h3>
+		<p>We want to display many different entities.</p>
+		<p>Showing summaries for each entity is repetitive and doesn't fully show the relationships between the entities.</p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="49" data-total-slides="56">
+    <hgroup>
+      <h2>Visualization Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/thinkbase_graph.png" class="inline-image" style="width:400px">
+	  <div>
+		<h3 class="blue">Solution</h3>
+		<p>Use data visualization techniques to display many different entities at once in a semantically meaningful way.
+		</p><ul style="margin: 0 0 0 500px">
+			<li>Trees</li>
+			<li>Maps</li>
+			<li>Timelines</li>
+			<li>Graphs</li>
+			<li>Bubble Charts</li>
+		</ul>
+		<p></p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+			<li>trees - families or organizations</li>
+			<li>maps - places or events</li>
+			<li>timelines - events</li>
+			<li>graphs - relationships</li>
+			<li>bubble charts - multiple variables</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/screenshots/thinkbase.png)" data-slide-num="50" data-total-slides="56">
+	<article>
+		<footer class="source">source: <a target="_blank" href="http://thinkbase.cs.auckland.ac.nz/">Thinkbase</a></footer>
+	</article>
+	<aside class="note">
+      <section>
+        <ul>
+
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="51" data-total-slides="56">
+    <hgroup>
+      <h2>Visualization Pattern</h2>
+    </hgroup>
+    <article>
+	  <img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/thinkbase_graph.png" class="inline-image" style="width:400px">
+	  <div>
+		<h3 class="blue">When to use it?</h3>
+		<p>When its important to be able to see the relationships between multiple entities at the same time.</p>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/screenshots/conflict_history.png)" data-slide-num="52" data-total-slides="56">
+	<article>
+		<footer class="source">source: <a target="_blank" href="http://www.conflicthistory.com/">conflicthistory.com</a></footer>
+	</article>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>Conflict history uses Freebase data to show an interactive history of military conflicts</li>
+          <li>Uses both maps and timeline visualizations.</li>
+          <li>Also shows summaries - great example of presentation</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/screenshots/summary.png)" data-slide-num="53" data-total-slides="56">
+	<aside class="note">
+      <section>
+        <ul>
+			<li>"to sum things up"</li>
+          	<li>Use discovery patterns to surface entities in your apps.</li>
+			<li>Use interaction patterns to allow users to navigate in meaningful ways.</li>
+			<li>Use presentation patterns to create informative user interfaces.</li>
+			<li>Build entity-oriented applications that scale with the web.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide data-slide-num="54" data-total-slides="56">
+    <hgroup>
+      <h2>Getting Started</h2>
+    </hgroup>
+    <article>
+	  <div>
+		<h3 class="">APIs</h3>
+		<ul>
+			<li><a href="http://wiki.freebase.com/wiki/API">Freebase API</a></li>
+			<li><a href="http://www.alchemyapi.com/">Alchemy API</a>, <a href="http://www.opencalais.com/calaisAPI">Calais</a>, <a href="http://developer.zemanta.com/docs/">Zemanta</a>  (Named Entity Recognition)</li>
+		</ul>
+		<h3 class="">Libraries</h3>
+		<ul>
+			<li><a href="http://wiki.freebase.com/wiki/Libraries">Freebase Client Libraries</a></li>
+			<li><a href="http://wiki.freebase.com/wiki/Freebase_Suggest">Freebase Suggest Widget</a></li>
+		</ul>
+		<h3 class="">Tools</h3>
+		<ul>
+			<li><a href="http://code.google.com/p/google-refine/">Google Refine</a></li>
+			<li><a href="http://dbpedia.org/spotlight/">DBpedia Spotlight</a></li>
+		</ul>
+	  </div>
+    </article>
+	<aside class="note">
+      <section>
+        <ul>
+			<li>Here are a list of resources to help you get started.</li>
+			<li>This is not just for new apps. Existing apps can also be enhanced with entities.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="thank-you-slide segue nobackground" data-slide-num="55" data-total-slides="56">
+    <aside class="gdbar right"><img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/google_developers_icon_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>Thank You!</h2>
+      <p><a style="font-size:1.2em" class="white" href="http://www.knowledgedesignpatterns.com/">KnowledgeDesignPatterns.com</a></p>
+    </article>
+    <p class="auto-fadein" data-config-contact=""><span>g+</span><a href="http://plus.google.com/109936836907132434202">plus.google.com/109936836907132434202</a><br><span>twitter</span><a href="http://twitter.com/@narphorium">@narphorium</a><br><br></p>
+	<aside class="note">
+      <section>
+        <ul>
+          <li>You can find the slides at KnowledgeDesignPatterns.com</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="logoslide dark nobackground" data-slide-num="56" data-total-slides="56">
+    <article class="flexbox vcenter">
+      <span><img src="./Knowledge-Based Application Design Patterns - Google IO 2012_files/google_developers_logo_white.png"></span>
+    </article>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+<div class="slide-area" id="prev-slide-area"></div><div class="slide-area" id="next-slide-area"></div></slides>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+
+
+</body></html>

@@ -1,0 +1,61 @@
+
+<!-- saved from url=(0061)http://io12-knowledge.appspot.com/demos/freebase_suggest.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Freebase Suggest Example - Find topics of type /film/director (Movie Director)</title>
+    
+    <link href="suggest.min.css" rel="stylesheet" type="text/css">
+    <link href="prettify.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="prettify(1).js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="suggest.min.js"></script>
+    
+        <style>
+      body {
+        font-family: Arial;
+      }
+      h1 {
+        font-size: 1.7em;
+      }
+      pre.prettyprint {
+        padding: 16px;
+        background: #eee;
+        min-width: 600px;
+        display: inline-block;
+		margin: 0;
+      }
+	  #myinput {
+	    width: 200px;
+		padding: 4px 6px;
+		font-size: 0.9em;
+		margin: 0 0 20px;
+      }
+	  #response {
+		display: none;
+	  }
+    </style>
+  </head>
+  <body onload="prettyPrint()">
+    <div id="body">
+      <p><strong>Try it out:</strong></p>
+      <input id="myinput" type="text" autocomplete="off">
+      <script type="text/javascript">
+      $(function() {
+        $("#myinput").suggest({filter:'(all type:/film/director)'}).bind("fb-select", function(e, data) {
+			$("#response pre").text(JSON.stringify(data, null, '  '));
+			prettyPrint();
+			$("#response").show();
+		})
+      });
+      </script>
+      <div id="response">
+	    <p><strong>Response:</strong>
+		</p><pre class="prettyprint"></pre><p></p>
+	  </div>
+      <p><strong>Code:</strong>
+      </p><pre class="prettyprint"><span class="pln">$</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  $</span><span class="pun">(</span><span class="str">"#myinput"</span><span class="pun">).</span><span class="pln">suggest</span><span class="pun">({</span><span class="pln">filter</span><span class="pun">:</span><span class="str">'(all type:/film/director)'</span><span class="pun">}).</span><span class="pln">bind</span><span class="pun">(</span><span class="str">"fb-select"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">e</span><span class="pun">,</span><span class="pln"> data</span><span class="pun">){</span><span class="pln">
+    </span><span class="com">// Your code goes here</span><span class="pln">
+</span><span class="pun">})});</span></pre><p></p>
+    </div>
+  
+<div style="display: none; position: absolute;" class="fbs-reset fbs-pane"><div style="display:none;" class="fbs-status"></div><ul class="fbs-list"></ul></div><div style="display: none; position: absolute;" class="fbs-reset fbs-flyout-pane"></div></body></html>
