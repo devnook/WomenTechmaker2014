@@ -26,7 +26,6 @@ var SLIDE_CONFIG = {
     company: 'Developer Programs Engineer<br>Google',
     gplus: 'http://plus.google.com/+EwaGasperowicz',
     twitter: '@devnook',
-    //www: 'http://www.you.com',
     github: 'http://github.com/devnook'
   }/*, {
     name: 'Second Name',
