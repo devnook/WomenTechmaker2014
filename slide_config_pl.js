@@ -1,7 +1,7 @@
 var SLIDE_CONFIG = {
   // Slide settings
   settings: {
-    title: 'Knowledge Graph and Structured Data',
+    title: 'Graf wiedzy i semantyczne tagi',
     subtitle: 'Uruchamianie Akcji w Gmailu i Kart Google Now',
     eventInfo: {
       title: 'DevFest Warszawa',
