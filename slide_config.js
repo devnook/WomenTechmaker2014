@@ -2,9 +2,9 @@ var SLIDE_CONFIG = {
   // Slide settings
   settings: {
     title: 'Knowledge Graph and Structured Data',
-    subtitle: 'Uruchamianie Akcji w Gmailu i Kart Google Now',
+    subtitle: 'Triggering Actions in Gmail and Google Now cards',
     eventInfo: {
-      title: 'DevFest Warszawa',
+      title: 'DevFest Warsaw',
       date: '9/11/2013'
     },
     useBuilds: true, // Default: true. False will turn off slide animation builds.
