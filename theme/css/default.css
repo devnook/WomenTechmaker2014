@@ -108,6 +108,10 @@ slides > slide[hidden] {
   display: none !important;
 }
 
+strong {
+  font-weight: bold;
+}
+
 /* line 86, ../scss/_base.scss */
 slides {
   width: 100%;
@@ -297,6 +301,9 @@ slides > slide.far-next {
 /* line 127, ../scss/default.scss */
 slides > slide.dark {
   background: #515151 !important;
+}
+slides > slide.black {
+  background: #000 !important;
 }
 /* line 135, ../scss/default.scss */
 slides > slide:not(.nobackground):before {
@@ -779,13 +786,13 @@ q {
 }
 /* line 514, ../scss/default.scss */
 q:before {
-  content: '“';
+  content: 'â€œ';
   position: absolute;
   margin-left: -0.5em;
 }
 /* line 519, ../scss/default.scss */
 q:after {
-  content: '”';
+  content: 'â€';
   position: absolute;
   margin-left: 0.1em;
 }

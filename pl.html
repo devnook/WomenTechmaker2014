@@ -1,0 +1,560 @@
+<!--
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke MahÃ© <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script type="text/javascript">
+  window._slides_config = 'slide_config_pl'
+  </script>
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-45672884-2', 'devnook.github.io');
+    ga('send', 'pageview');
+
+  </script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="logoslide nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/google_developers_logo.png"></span>
+    </article>
+  </slide>
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+  <slide class="">
+    <!--<hgroup>
+      <h2>About me</h2>
+    </hgroup>-->
+    <article style="padding:100px 0 0 350px">
+    <img src="images/me_circle.jpeg" class="inline-image" style="position:absolute;width:240px;left: 100px"/>
+    <h3 class="blue" style="font-size:1.3em">Ewa Gasperowicz</h3>
+    <p>Developer Relations, Knowledge (Search)</p>
+    <br/><br/>
+    <ul>
+    <li>Google Custom Search</li>
+    <li>Schema.org</li>
+    <li>Knowledge Graph</li>
+    </ul>
+    </article>
+  </slide>
+
+  <slide class="segue dark quote nobackground">
+    <aside class="gdbar right bottom"><img src="images/google_developers_icon_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <q>
+        Na naszych oczach korzystanie z informacji zmienia siÄ™ dramatycznie
+      </q>
+      <div class="author">
+        Amit Singhal<br>
+        Google
+      </div>
+    </article>
+    <aside class="note">
+      <section>
+        Search is dramatically changing right before our eyes
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/search.png); background-size: 95%; background-position: 25px 25px">
+  <aside class="note">
+      <section>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/search-stars.png); background-size: 95%; background-position: 25px 25px">
+  <aside class="note">
+
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/screenshots/knowledge_graph.png)">
+  <article>
+  </article>
+  <aside class="note">
+      <section>
+        <ul>
+
+          <li>Example: Google's Knowledge Graph</li>
+          <li>500 million entities</li>
+          <li>3.5 billion facts</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/screenshots/chuck_norris_graph.png)">
+  <aside class="note">
+      <section>
+        <ul>
+      <li>What is a Knowledge Graph</li>
+      <li>A collection of real-world entities.</li>
+      <li>Interesting facts about those entities.</li>
+      <li>Meaningful relationships between the entities.</li>
+      <li>High quality.</li>
+      <li>De-duplicated.</li>
+      <li>Searchable.</li>
+        </ul>
+      </section>
+    </aside>
+  </slide>
+
+
+
+  <slide>
+    <article>
+        <h2>
+          Publikowanie i uÅ¼ywanie semantycznych tagÃ³w
+        </h2>
+        <img src="https://docs.google.com/a/google.com/drawings/d/1tSFzNnb4uRGIXwX6bg5tICt5LOZkKSh3djP6hUTzBP4/pub?w=960&amp;h=720">
+    </article>
+    <aside class="note">
+    <section>
+      Publishing and sharing structured data
+      </section>
+    </aside>
+  </slide>
+
+
+  <slide>
+    <article>
+        <h2>
+          ÅÄ…czenie semantycznych tagÃ³w w graf
+        </h2>
+        <img src="https://docs.google.com/a/google.com/drawings/d/1V505oM1B4xzSZY1jjgq_Qal8-oQuByHjG19xqx9q9RA/pub?w=960&amp;h=720">
+    </article>
+    <aside class="note">
+    <section>
+      Using structured data in a graph
+      </section>
+    </aside>
+  </slide>
+
+  <slide>
+    <article>
+        <h2>
+          Cztery rodzaje interakcji z Grafem Wiedzy
+        </h2>
+        <img src="https://docs.google.com/a/google.com/drawings/d/10ba3J1eQ6HLusffK-kvTYOF6RZmLWNQMaxFRx4Bdojc/pub?w=960&amp;h=720" style="margin-top:-60px;">
+    </article>
+    <aside class="note">
+    <section>
+      Four types of interaction with Knowledge Graph
+      </section>
+    </aside>
+  </slide>
+
+
+  <slide>
+    <article>
+        <h2>
+          <span style="font-weight:normal;">Otwarty ekosystem</span><br>
+          <strong>dziÄ™ki Schema.org</strong></h2>
+        <img src="images/open.png" style="position: absolute;right: 20px;top: 0;">
+    </article>
+    <aside class="note">
+    <section>
+      Open ecosystem with schema.org
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/girl.jpg)">
+    <article>
+        <h2>
+          Interakcja z uÅ¼ytkownikiem jest istotna</h2>
+    </article>
+    <aside class="note">
+    <section>
+      Interaction with the user outside of an app is important
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/girl.jpg)">
+    <article>
+        <h2>
+          Interakcja z uÅ¼ytkownikiem jest istotna</h2>
+        <img src="images/facebook_logo_detail.gif" style="position: absolute;width: 120px;bottom: 30px;left: 30px;">
+        <img src="images/twitter.png" style="position: absolute;width: 120px;bottom: 30px;left: 200px;"><img src="images/plus.png" style="position: absolute;width: 120px;bottom: 30px;left: 370px;"><img src="images/sms.png" style="position: absolute;width: 120px;bottom: 30px;left: 540px;"><img src="images/gmail.png" style="position: absolute;height: 138px;bottom: 30px;left: 710px;margin-bottom: -8px;">
+    </article>
+    <aside class="note">
+    <section>
+      Interaction with the user outside of an app is important
+      </section>
+    </aside>
+  </slide>
+
+  <slide>
+    <article>
+        <h2>
+          Akcje w gmailu</h2>
+        <img src="images/gmail-1.png" style="width: 100%;margin-top: 20px;">
+    </article>
+    <aside class="note">
+    <section>
+      Actions in gmail
+      </section>
+    </aside>
+  </slide>
+
+  <slide>
+    <article>
+        <h2>
+          Karty Google Now</h2>
+        <img src="images/gmail-2.png" style="width: 100%;margin-top: 20px;">
+    </article>
+    <aside class="note">
+    <section>
+      Google Now cards
+      </section>
+    </aside>
+  </slide>
+
+  <slide>
+    <article>
+        <h2>
+          Semantyczne tagi pozwalajÄ… na ustrukturyzowne interakcje</h2>
+        <img src="images/gmail-4.png" style="width: 100%;margin-top: 20px;">
+    </article>
+    <aside class="note">
+    <section>
+      Structured interaction needs structured data
+      </section>
+    </aside>
+  </slide>
+
+  <slide>
+    <article>
+        <h2>
+          Cztery rodzaje akcji w gmailu</h2>
+        <img src="images/gmail-screen.png" style="width: 100%;margin-top: 20px;">
+    </article>
+    <aside class="note">
+    <section>
+      Four types of actions in gmail
+      </section>
+    </aside>
+  </slide>
+
+
+  <slide class="fill nobackground" style="background-image: url(https://docs.google.com/a/google.com/drawings/d/1JikfE3pHBgLN55COi-j_TCiP0k4AIwrczcwQBLXFEkc/pub?w=960&h=720); background-size:100% 100%;">
+    <article>
+        <h2>
+          Jak to dziaÅ‚a?</h2>
+
+    </article>
+    <aside class="note">
+    <section>
+      How does it work?
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(https://docs.google.com/a/google.com/drawings/d/1RoQZY4PCvYpx97mjE9e3VhSCcivvxhte05qLNnPgaAQ/pub?w=960&h=720); background-size:100% 100%;">
+    <article>
+        <h2>
+          Jak to dziaÅ‚a?</h2>
+
+    </article>
+    <aside class="note">
+    <section>
+      How does it work?
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(https://docs.google.com/a/google.com/drawings/d/1xMI17z5Ze1P1wczwbEdfyx-wrWS-ii6X7v1-Gm1D7Yc/pub?w=960&h=720); background-size:100% 100%;">
+    <article>
+        <h2>
+          Jak to dziaÅ‚a?</h2>
+
+    </article>
+    <aside class="note">
+    <section>
+      How does it work?
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(https://docs.google.com/a/google.com/drawings/d/1gagGbAQ7OCNA0TXBCDu-U37KQY7LkUzUjdLp8kOX8p0/pub?w=960&h=720); https://docs.google.com/a/google.com/drawings/d/1xMI17z5Ze1P1wczwbEdfyx-wrWS-ii6X7v1-Gm1D7Yc/pub?w=960&h=720; background-size:100% 100%;">
+    <article>
+        <h2>
+          Jak to dziaÅ‚a?</h2>
+
+    </article>
+    <aside class="note">
+    <section>
+      How does it work?
+      </section>
+    </aside>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Zacznij od treÅ›ci wiadomoÅ›ci email</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="html">&lt;html&gt;<br/>  &lt;body&gt;<br/>    &lt;p&gt;<br/>      Dear John, thanks for booking your Google I/O ticket with us.<br/>    &lt;/p&gt;<br/>    &lt;p&gt;<br/>      BOOKING DETAILS&lt;br/&gt;<br/>      Order for: John Smith&lt;br/&gt;<br/>      Event: Google I/O 2013&lt;br/&gt;<br/>      When: May 15th 2013 8:30am PST&lt;br/&gt;<br/>      Venue: Moscone Center, 800 Howard St., San Francisco, CA 94103&lt;br/&gt;<br/>      Reservation number: IO12345&lt;br/&gt;<br/>    &lt;/p&gt;<br/>  &lt;/body&gt;<br/>&lt;/html&gt;
+      </pre>
+    </article>
+    <aside class="note">
+    <section>
+      Start with writing an email
+      </section>
+    </aside>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Dodaj semantyczne tagi</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="html">&lt;html&gt;<br/>  &lt;body&gt;<br/>    &lt;script type=&quot;application/ld+json&quot;&gt;<br/>    {<br/>      &quot;@context&quot; : &quot;http://schema.org&quot;,<br/>      &quot;@type&quot; : &quot;Event&quot;,<br/>      &quot;name&quot; : &quot;Google I/O 2013&quot;,<br/>      &quot;startDate&quot; : &quot;2013-05-15T08:30&quot;<br/>    }<br/>    &lt;/script&gt;<br/>    &lt;p&gt;<br/>      Dear John, thanks for booking your Google I/O ticket with us.<br/>    &lt;/p&gt;<br/>    &lt;p&gt;<br/>      BOOKING DETAILS&lt;br/&gt;<br/>      ...  &lt;/body&gt;<br/>&lt;/html&gt;
+      </pre>
+    </article>
+    <aside class="note">
+    <section>
+      Add semantic markup
+      </section>
+    </aside>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>Dodaj semantyczne tagi</h2>
+    </hgroup>
+    <article>
+      <img src="images/helper.png">
+    </article>
+    <footer class="source">
+      <a href="https://www.google.com/webmasters/markup-helper/u/0/?email=true">www.google.com/webmasters/markup-helper</a></footer>
+    <aside class="note">
+    <section>
+      Add semantic markup
+      </section>
+    </aside>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Przetestuj tagi</h2>
+    </hgroup>
+    <article>
+      <img src="images/tester.png">
+    </article>
+    <footer class="source">
+      <a href="https://www.google.com/webmasters/markup-tester">www.google.com/webmasters/markup-tester</a></footer>
+    <aside class="note">
+    <section>
+      Test markup
+      </section>
+    </aside>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>WyÅ›lij email na wÅ‚asny adres</h2>
+    </hgroup>
+    <article>
+      <img src="images/send.png" style="width:100%;">
+    </article>
+    <footer class="source">
+      <a href="http://gmail-actions.appspot.com/">gmail-actions.appspot.com</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://github.com/googleknowledge/GmailActions">Fork us!</a>
+    </footer>
+    <aside class="note">
+    <section>
+      Send to your own gmail account.
+      </section>
+    </aside>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Podobnie dziaÅ‚ajÄ… karty Google Now</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li><a href="https://devsite.googleplex.com/schemas/reference/event-reservation">Rezerwacja wydarzenia</a></li>
+        <li><a href="https://devsite.googleplex.com/schemas/reference/flight-reservation">Rezerwacja lotu</a></li>
+        <li><a href="https://devsite.googleplex.com/schemas/reference/hotel-reservation">Rezerwacja hotelu</a></li>
+        <li><a href="https://devsite.googleplex.com/schemas/reference/restaurant-reservation">Rezerwacja w restauracji</a></li>
+      </ul>
+      <p>Masz pomysÅ‚? Daj nam znaÄ‡!</p>
+    </article>
+    <aside class="note">
+      <section>
+      Google now cards work similar.
+      <ul>
+        <li><a href="https://devsite.googleplex.com/schemas/reference/event-reservation">Event reservation</a></li>
+        <li><a href="https://devsite.googleplex.com/schemas/reference/flight-reservation">Flight reservation</a></li>
+        <li><a href="https://devsite.googleplex.com/schemas/reference/hotel-reservation">Hotel reservation</a></li>
+        <li><a href="https://devsite.googleplex.com/schemas/reference/restaurant-reservation">Restaurant reservation</a></li>
+      </ul>
+      <p>Have an idea? Tell us!</p>
+      </section>
+    </aside>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>Wszystko gotowe?</h2>
+    </hgroup>
+    <article>
+      <p><a href="https://developers.google.com/gmail/actions/registering-with-google">Zarejestruj siÄ™</a></p>
+    </article>
+    <aside class="note">
+    <section>
+      Everything ready?
+      <p>Register!</p>
+      </section>
+    </aside>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Kilka uwag</h2>
+    </hgroup>
+    <article>
+    <style type="text/css">li {line-height:1.5em;}</style>
+      <ul>
+        <li>Niepoprawny markup jest ignorowany</li>
+        <li>Testowy email musi pochodziÄ‡ od tego samego nadawcy</li>
+        <li>Karty Google Now podlegajÄ… priorytyzacji</li>
+        <li>Karty Google Now pojawiajÄ… siÄ™ w okreÅ›lonym terminie - uwaga na strefy czasowe</li>
+        <li>Karty Google Now wymagajÄ… zgodnoÅ›ci z realnymi wydarzeniami - np numer lotu musi odpowiadaÄ‡ istniejÄ…cemu lotowi rejsowemu.</li>
+      </ul>
+    </article>
+    <aside class="note">
+    <section>
+      Some notes
+      <ul>
+        <li>Invalid markup is ignored</li>
+        <li>Test email must be sent from the same account</li>
+        <li>Google Now cards get prioritized by algorithms</li>
+        <li>Google Now cards appear at certain times - watch out for time zones</li>
+        <li>Google Now cards must refer to real events - e.g. flight number must be a real one.</li>
+      </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Dodatkowe informacje</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>
+          <a href="http://developers.google.com/schemas">developers.google.com/schemas</a> - dokumentacja semantycznej integracji z Google
+        </li>
+        <li>
+          <a href="http://schema.org">schema.org</a> - wszystko o standardzie schema.org
+        </li>
+        <li>
+          <a href="https://developers.google.com/gmail/actions/registering-with-google">rejestracja z Google</a> - informacje przydatne przy rejestracji jako partner
+        </li>
+        <li>
+          Nadal masz pytania? <a href="http://stackoverflow.com/questions/tagged/google-schemas">#google-schemas</a> na StackOverflow
+        </li>
+      </ul>
+    </article>
+    <aside class="note">
+    <section>
+      Additional info
+      <ul>
+        <li>
+          <a href="http://developers.google.com/schemas">developers.google.com/schemas</a> - documentation about semantic integration with Google
+        </li>
+        <li>
+          <a href="http://schema.org">schema.org</a> - everything about the standard schema.org
+        </li>
+        <li>
+          <a href="https://developers.google.com/gmail/actions/registering-with-google">register with Google</a> - information useful when registering as a partner
+        </li>
+        <li>
+          Still have questions? <a href="http://stackoverflow.com/questions/tagged/google-schemas">#google-schemas</a> at StackOverflow
+        </li>
+      </ul>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>&lt;DziÄ™kujÄ™!&gt;</h2>
+      <p><a style="color:#fff;" href="http://devnook.github.io/devfest-slides/pl.html">devnook.github.io/devfest-slides/pl.html</a><br>
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+  <slide class="logoslide dark nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/google_developers_logo_white.png"></span>
+    </article>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
