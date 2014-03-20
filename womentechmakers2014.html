@@ -1,0 +1,490 @@
+<!--
+Based on https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script type="text/javascript">
+  window._slides_config = 'slide_config_pl'
+  </script>
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-45672884-2', 'devnook.github.io');
+    ga('send', 'pageview');
+
+  </script>
+</head>
+<body style="opacity: 0">
+
+  <slides class="layout-widescreen">
+
+    <slide class="logoslide nobackground">
+      <article class="flexbox vcenter">
+        <span><img src="images/google_developers_logo.png"></span>
+      </article>
+    </slide>
+
+    <slide class="title-slide segue nobackground">
+      <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+      <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+      <hgroup class="auto-fadein">
+        <h1 data-config-title style="font-size:50px;"><!-- populated from slide_config.json --></h1>
+        <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+        <p data-config-presenter><!-- populated from slide_config.json --></p>
+      </hgroup>
+    </slide>
+
+    <slide class="">
+    <!--<hgroup>
+      <h2>About me</h2>
+    </hgroup>-->
+    <article style="padding:100px 0 0 350px">
+      <img src="images/me_circle.jpeg" class="inline-image" style="position:absolute;width:240px;left: 100px"/>
+      <h3 class="blue" style="font-size:1.3em">Ewa Gasperowicz</h3>
+      <p>Developer Relations, Knowledge (Search)</p>
+      <br/><br/>
+      <ul>
+        <li>Google Custom Search</li>
+        <li>Schema.org</li>
+        <li>Knowledge Graph</li>
+      </ul>
+    </article>
+  </slide>
+
+
+  <slide class="segue dark quote nobackground">
+    <aside class="gdbar right bottom"><img src="images/google_developers_icon_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <q>
+        Na naszych oczach korzystanie z informacji zmienia się dramatycznie
+      </q>
+      <div class="author">
+        Amit Singhal<br>
+        Google
+      </div>
+    </article>
+    <aside class="note">
+      <section>
+
+      </section>
+    </aside>
+  </slide>
+
+  <slide>
+    <article>
+      <h2>
+        Internet i wyszukiwanie w 1998
+      </h2>
+      <img src="images/search1998.png" height="580">
+    </article>
+    <aside class="note">
+      <section>
+      </section>
+    </aside>
+  </slide>
+
+  <slide>
+    <article>
+      <h2>
+        Internet i wyszukiwanie w przyszłości?
+      </h2>
+      <img src="images/future.png" height="580">
+    </article>
+    <aside class="note">
+      <section>
+      </section>
+    </aside>
+  </slide>
+
+<slide>
+    <article>
+      <h2>
+        Internet i wyszukiwanie w przyszłości?
+      </h2>
+      <img src="images/newsearch.png" height="580">
+    </article>
+  </slide>
+
+  <slide class="nobackground" style="background-image: url(images/graph.png); background-size: 100%; ">
+    <article>
+      <h2>
+        Graf wiedzy
+      </h2>
+    </article>
+  </slide>
+
+  <slide class="fill">
+    <hgroup>
+      <h2>Graf wiedzy składa się z milionów faktów</h2>
+    </hgroup>
+    <article>
+    <p>Do opisu grafu służy standard RDF (Resource Description Framework)</p>
+      <ul>
+        <li>Każdy fakt to tzw "trójka semantyczna":
+        <ul><li>Podmiot - predykat - obiekt</li></ul>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="nobackground">
+    <img src="images/graph1.png">
+  </slide><slide class="nobackground" style="background-color: #000;">
+    <img src="images/graph2.png">
+  </slide><slide class="nobackground" >
+    <img src="images/graph3.png">
+  </slide><slide class="nobackground" >
+    <img src="images/graph4.png">
+  </slide><slide class="nobackground" >
+    <img src="images/graph5.png">
+  </slide>
+
+
+  <slide class="fill">
+    <hgroup>
+      <h2>Skąd się biorą fakty w Grafie Wiedzy?</h2>
+    </hgroup>
+    <article>
+    <p></p>
+      <ul>
+        <li>Gafowe bazy danych - Freebase</li>
+        <li>Strony internetowe z semantycznym markupem</li>
+        <li>Inne dokumenty, np email</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="fill">
+    <hgroup>
+      <h2>Jak publikować semantyczne dane?</h2>
+    </hgroup>
+    <article>
+    <p>Potrzebne jest</p>
+      <ul>
+        <li>Standardowe nazewnictwo</li>
+        <li>Standardowe formaty</li>
+      </ul>
+    </article>
+  </slide>
+
+   <slide class="fill">
+    <hgroup>
+      <h2>Jak publikować semantyczne dane?</h2>
+    </hgroup>
+    <article>
+    <p>Potrzebne jest</p>
+      <ul>
+        <li>Standardowe nazewnictwo</li>
+        <li>Standardowe formaty</li>
+      </ul>
+      <img src="images/triples1.png" style="margin-top:20px">
+    </article>
+  </slide>
+
+  <slide class="fill">
+    <hgroup>
+      <h2>Jak publikować semantyczne dane?</h2>
+    </hgroup>
+    <article>
+    <p>Potrzebne jest</p>
+      <ul>
+        <li>Standardowe nazewnictwo</li>
+        <li>Standardowe formaty</li>
+      </ul>
+      <img src="images/triples2.png" style="margin-top:20px">
+    </article>
+  </slide>
+
+  <slide style="background-color: #fff">
+    <article>
+      <h2 style="color: #666;">
+        <span style="font-weight:normal;">Open ecosystem</span><br>
+        <strong>With Schema.org</strong></h2>
+        <img src="images/open.png" style="position: absolute;right: 20px;top: 0;">
+      </article>
+      <aside class="note">
+        <section>
+        </section>
+      </aside>
+    </slide>
+
+  <slide class="fill">
+    <hgroup>
+      <h2>Jak publikować semantyczne dane?</h2>
+    </hgroup>
+    <article>
+    <p>Potrzebne jest</p>
+      <ul>
+        <li>Standardowe nazewnictwo</li>
+        <li>Identyfikatory</li>
+        <li>Standardowe formaty</li>
+      </ul>
+      <img src="images/identifiers.png" style="margin-top:20px">
+    </article>
+  </slide>
+
+  <slide class="fill">
+    <hgroup>
+      <h2>Jak publikować semantyczne dane?</h2>
+    </hgroup>
+    <article>
+    <p>Potrzebne jest</p>
+      <ul>
+        <li>Standardowe nazewnictwo</li>
+        <li>Identyfikatory</li>
+        <li>Standardowe formaty</li>
+      </ul>
+      <img src="images/identifiers1.png" style="margin-top:20px">
+    </article>
+  </slide>
+
+   <slide class="fill">
+    <hgroup>
+      <h2>Jak publikować semantyczne dane?</h2>
+    </hgroup>
+    <article>
+    <p>Potrzebne jest</p>
+      <ul>
+        <li>Standardowe nazewnictwo</li>
+        <li>Identyfikatory</li>
+        <li>Standardowe formaty</li>
+      </ul>
+      <img src="images/identifiers2.png" style="margin-top:20px">
+    </article>
+  </slide>
+
+  <slide class="fill">
+    <hgroup>
+      <h2>Reconciliation</h2>
+    </hgroup>
+    <article>
+      <img src="images/reconciliation2.png">
+    </article>
+  </slide>
+
+  <slide class="fill">
+    <hgroup>
+      <h2>Reconciliation</h2>
+    </hgroup>
+    <article>
+      <img src="images/reconciliation1.png">
+    </article>
+  </slide>
+
+  <slide class="fill">
+    <hgroup>
+      <h2>Reconciliation</h2>
+    </hgroup>
+    <article>
+      <img src="images/reconciliation.png">
+    </article>
+  </slide>
+
+  <slide class="fill">
+    <hgroup>
+      <h2>Jak publikować semantyczne dane?</h2>
+    </hgroup>
+    <article>
+    <p>Potrzebne jest</p>
+      <ul>
+        <li>Standardowe nazewnictwo</li>
+        <li>Standardowe formaty</li>
+      </ul>
+      <img src="images/formats.png" style="margin-top:20px">
+      <p><a href="http://schema-tools.appspot.com/Movie">Przykład - Movie</a></p>
+      <p><a href="http://www.imdb.com/title/tt0133093/?ref_=fn_al_tt_1">Przykład - IMDB</a></p>
+    </article>
+  </slide>
+
+  <slide class="fill">
+    <hgroup>
+    <a href="http://devnook.github.io/SchemaGraph/">http://devnook.github.io/SchemaGraph</a>
+    </hgroup>
+    <article>
+    <iframe src="http://devnook.github.io/SchemaGraph/"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <article>
+      <h2>
+        Jak korzystać z Grafu wiedzy?
+      </h2>
+      <img src="images/interaction.png" style="margin-top: -70px;">
+    </article>
+  </slide>
+
+  <slide class="fill">
+    <hgroup>
+    <h2>Publikuj</h2>
+    </hgroup>
+    <article>
+    <img src="images/matrixpanel.png">
+    <p>
+    <a href="https://www.google.co.uk/search?q=matrix+movie">Matrix Knowelwdge Panel</a>
+    <a href="https://www.google.co.uk/search?q=crispy+chicken+salad+recipe">Recipe search</a>
+    </p>
+    </article>
+  </slide>
+
+  <slide class="fill">
+    <hgroup>
+    <h2>Miksuj i korzystaj z danych</h2>
+    </hgroup>
+    <article>
+    <div class="columns-2">
+    <div ><img src="images/freebase.png" >
+    <a href="http://www.freebase.com" target="_blank">freebase.com</a></div>
+    <div>
+
+    <ul>
+      <li>Otwara i darmowa baza danych</li>
+      <li>Każdy może edytować</li>
+      <li>Jedno ze źródeł dla Grafu Wiedzy Google</li>
+      <li>Można kopiować i używać lokalnie jako graf</li>
+      <li>42.9 milionów ludzi, miejsc i rzeczy</li>
+      <li>2.4B faktów (trójek)</li>
+    </ul>
+    </div>
+    </div>
+
+
+
+    </article>
+
+  </slide>
+
+  <slide class="fill">
+    <hgroup>
+    <h2>Miksuj i korzystaj z danych</h2>
+    </hgroup>
+    <article>
+    Przykłady:
+    <ul>
+      <li>Freebase maps <a href="https://www.youtube.com/watch?v=BOHzSLfmMrQ">video</a> <a href="http://googleknowledge.github.io/FreebaseMaps/">demo</a></li>
+      <li><a href="http://devnook.github.io/wineland">Wineland</a></li>
+      <li><a href="http://googleknowledge.github.io/StrataMaps/">Gender Gap</a></li>
+    </ul>
+    </article>
+  </slide>
+
+  <slide class="fill">
+    <hgroup>
+    <h2>Integruj z innymi produktami Google</h2>
+    </hgroup>
+    <article>
+    <img src="images/gmailcard.png">
+    <img src="images/nowcard.png">
+    <p><a href="http://gmail-actions.appspot.com/">gmail-actions.appspot.com</a></p>
+    <p>Więcej: <a href="https://developers.google.com/schemas">developers.google.com/schemas</a></p>
+    </article>
+  </slide>
+
+  <slide class="fill">
+    <hgroup>
+    <h2>Reference</h2>
+    </hgroup>
+    <article>
+    <iframe src="http://suggest-examples.freebaseapps.com/"></iframe>
+    </article>
+    <footer><a href="https://developers.google.com/schemas">developers.google.com/schemas</a></footer>
+  </slide>
+
+  <slide>
+    <article>
+      <h2>
+        Podsumowanie
+      </h2>
+      <img src="https://docs.google.com/a/google.com/drawings/d/1tSFzNnb4uRGIXwX6bg5tICt5LOZkKSh3djP6hUTzBP4/pub?w=960&amp;h=720">
+    </article>
+    <aside class="note">
+      <section>
+      </section>
+    </aside>
+  </slide>
+
+  <slide>
+    <article>
+      <h2>
+        Podsumowanie
+      </h2>
+      <img src="https://docs.google.com/a/google.com/drawings/d/1V505oM1B4xzSZY1jjgq_Qal8-oQuByHjG19xqx9q9RA/pub?w=960&amp;h=720">
+    </article>
+    <aside class="note">
+      <section>
+      </section>
+    </aside>
+  </slide>
+
+
+
+
+
+  <slide>
+    <hgroup>
+      <h2>Do poczytania</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>
+          <a href="http://www.google.com/intl/pl/insidesearch/features/search/knowledge.html">Graf Wiedzy Google</a>
+        </li>
+        <li>
+          <a href="http://developers.google.com/freebase">Freebase</a>
+        </li>
+        <li>
+          <a href="http://developers.google.com/schemas">developers.google.com/schemas</a> - dokumentacja semantycznej integracji z Google
+        </li>
+        <li>
+          <a href="http://schema.org">schema.org</a> - wszystko o standardzie schema.org
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>&lt;Dziękuję!&gt;</h2>
+      <p><a style="color:#fff;" href="http://devnook.github.io/devfest-slides/pl.html">devnook.github.io/devfest-slides/pl.html</a><br>
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+
+                          <script>
+                            var _gaq = _gaq || [];
+                            _gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+                            _gaq.push(['_trackPageview']);
+
+                            (function() {
+                              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                            })();
+                          </script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+</html>

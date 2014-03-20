@@ -1,11 +1,11 @@
 var SLIDE_CONFIG = {
   // Slide settings
   settings: {
-    title: 'Graf wiedzy i semantyczne tagi',
-    subtitle: 'Uruchamianie Akcji w Gmailu i Kart Google Now',
+    title: 'Graf Wiedzy Google',
+    subtitle: 'Semantyczne tagi i internet przyszłości',
     eventInfo: {
-      title: 'DevFest Warszawa',
-      date: '9/11/2013'
+      title: 'Women Techmakers Kraków',
+      date: '20/03/2014'
     },
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true

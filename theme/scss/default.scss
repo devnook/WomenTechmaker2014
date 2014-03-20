@@ -12,7 +12,7 @@
 
 @mixin backdrop {
   @include background(linear-gradient(white, white 85%, $gray-1));
-  background-color: white;
+  background-color: #000;
 }
 
 
@@ -939,7 +939,7 @@ aside.gdbar {
       display: none !important;
     }
   }
-  
+
   slides {
     slide {
       &.backdrop {
